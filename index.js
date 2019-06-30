@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
  
  require('dotenv').config({path: 'variables.env'});
 
-mongoose.connect(process.env.DATABASE);
+mongoose.connect(process.env.DATABASE, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 mongoose.connection.on('error', (err)=>{
     console.error(`🙅 🚫 🙅 🚫 🙅 🚫 🙅 🚫 → ${err.message}`);
